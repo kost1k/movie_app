@@ -1,6 +1,14 @@
 <template>
   <div class="btn_div">
-    <el-button @click="getFilm">GET</el-button>
+    <el-input
+      @keyup.enter="
+        () => {
+          getFilm(searchInput)((searchInput = ''));
+        }
+      "
+      v-model="searchInput"
+      placeholder="Please input"
+    />
   </div>
   <div class="container_films">
     <el-card
@@ -15,7 +23,7 @@
           :src="
             item.poster_path
               ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
-              : './src/components/icons/error.png'
+              : './public/img/error.png'
           "
           alt=""
         />
@@ -44,16 +52,19 @@
 
 <script>
 import { useFilmsStore } from "@/stores/getFilms";
-import { toRefs } from "vue";
+import { ref, toRefs } from "vue";
 
 export default {
   setup() {
     const filmsStore = useFilmsStore();
     const { movie_data, getFilm } = toRefs(filmsStore);
 
+    const searchInput = ref("");
+
     return {
       movie_data,
       getFilm,
+      searchInput,
     };
   },
 };
@@ -67,7 +78,6 @@ img {
 
 .btn_div {
   margin: 20px auto;
-  width: 0;
 }
 
 .body {

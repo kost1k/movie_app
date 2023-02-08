@@ -8,8 +8,8 @@ export const useFilmsStore = defineStore("counter", {
     };
   },
   actions: {
-    async getFilm() {
-      const api_url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=хуй\n`;
+    async getFilm(s) {
+      const api_url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${s}\n`;
       const res = await fetch(`${api_url}`);
       const data = await res.json();
       this.movie_data = data.results;
