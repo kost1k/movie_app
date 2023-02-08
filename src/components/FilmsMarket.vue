@@ -1,14 +1,10 @@
 <template>
   <div class="btn_div">
     <el-input
-      @keyup.enter="
-        () => {
-          getFilm(searchInput)((searchInput = ''));
-        }
-      "
       v-model="searchInput"
       placeholder="Please input"
-    />
+      @keyup.enter="getFilm(searchInput)"
+    ></el-input>
   </div>
   <div class="container_films">
     <el-card
@@ -52,20 +48,27 @@
 
 <script>
 import { useFilmsStore } from "@/stores/getFilms";
-import { ref, toRefs } from "vue";
+import { toRefs } from "vue";
 
 export default {
   setup() {
     const filmsStore = useFilmsStore();
     const { movie_data, getFilm } = toRefs(filmsStore);
 
-    const searchInput = ref("");
-
     return {
       movie_data,
       getFilm,
-      searchInput,
     };
+  },
+  data() {
+    return {
+      searchInput: "",
+    };
+  },
+  watch: {
+    movie_data() {
+      this.searchInput = "";
+    },
   },
 };
 </script>
