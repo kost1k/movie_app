@@ -1,3 +1,10 @@
-<script setup></script>
+<script>
+import { defineComponent } from "vue";
+import FavoriteFilms from "@/components/FavoriteFilms.vue";
 
-<template>Home</template>
+export default defineComponent({
+  components: { FavoriteFilms },
+});
+</script>
+
+<template><FavoriteFilms /></template>
