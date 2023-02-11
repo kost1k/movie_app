@@ -6,13 +6,18 @@ export const useFavoriteFilms = defineStore("favoriteFilms", {
       favoriteMovie: [
         {
           name: "Batman",
-          title: "sukablyat",
+          title: "this batman",
           id: 1,
         },
         {
           name: "piderman",
-          title: "xyita",
+          title: "this spiderman",
           id: 2,
+        },
+        {
+          name: "Thor",
+          title: "this thor",
+          id: 3,
         },
       ],
     };
@@ -20,6 +25,19 @@ export const useFavoriteFilms = defineStore("favoriteFilms", {
   actions: {
     deleteFilms(id) {
       this.favoriteMovie = this.favoriteMovie.filter((arr) => arr.id !== id);
+    },
+    watchFilm(id) {
+      this.favoriteMovie = this.favoriteMovie.map((arr) => {
+        if (arr.id === id) {
+          if (arr.watch === true) {
+            return { ...arr, watch: false };
+          } else {
+            return { ...arr, watch: true };
+          }
+        } else {
+          return arr;
+        }
+      });
     },
   },
 });

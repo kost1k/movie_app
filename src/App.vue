@@ -17,10 +17,10 @@ export default {
   <div class="nav">
     <el-menu :default-active="selected" mode="horizontal" :router="true">
       <el-menu-item index="home" :route="{ name: 'home' }">
-        HomePage
+        Favorite Films
       </el-menu-item>
       <el-menu-item index="about" :route="{ name: 'about' }">
-        About
+        Search
       </el-menu-item>
     </el-menu>
   </div>
@@ -32,7 +32,7 @@ export default {
 <style scoped>
 .container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 0 20px;
 }
 </style>
