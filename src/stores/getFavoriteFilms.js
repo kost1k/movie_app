@@ -10,8 +10,8 @@ export const useFavoriteFilms = defineStore("favoriteFilms", {
           id: 1,
         },
         {
-          name: "piderman",
-          title: "this spiderman",
+          name: "Spider-man",
+          title: "this spider-man",
           id: 2,
         },
         {
