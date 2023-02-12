@@ -1,6 +1,12 @@
-<template><Films /></template>
+<script>
+import { defineComponent } from "vue";
+import FilmsMarket from "@/components/FilmsMarket.vue";
 
-<style></style>
-<script setup>
-import Films from "@/components/FilmsMarket.vue";
+export default defineComponent({
+  components: { FilmsMarket },
+});
 </script>
+
+<template>
+  <FilmsMarket />
+</template>
