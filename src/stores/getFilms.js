@@ -17,7 +17,12 @@ export const useFilmsStore = defineStore("searchFilms", {
     },
     addToUserMovies(obj) {
       const movieStore = useFavoriteFilms();
-      movieStore.favoriteMovie.push({ ...obj, watch: false });
+      const movieFavoriteStore = movieStore.favoriteMovie;
+      if (
+        movieFavoriteStore.filter((favObj) => favObj.id === obj.id).length === 0
+      ) {
+        movieFavoriteStore.push({ ...obj, watch: false });
+      }
     },
   },
 });
