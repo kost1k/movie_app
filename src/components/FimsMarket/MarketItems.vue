@@ -17,14 +17,15 @@
       />
       <div class="item_body">
         <div style="flex: max-content">
-          {{ item.title }}
-          <br />
-          {{ item.overview }}
+          <h2>{{ item.title }}</h2>
+          <h3>{{ item.overview }}</h3>
         </div>
         <div class="item_footer">
           <div>Rating: {{ item.vote_average }}</div>
           <div>Release date: {{ item.release_date }}</div>
-          <el-button @click="addToUserMovies(item)">Add</el-button>
+          <el-button type="primary" @click="addToUserMovies(item)"
+            >Add</el-button
+          >
         </div>
       </div>
     </div>

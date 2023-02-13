@@ -17,13 +17,18 @@
               <h3>{{ film.overview }}</h3>
             </div>
             <div class="card_btn">
-              <el-button v-if="film.watch" @click="toggleWatchFilm(film.id)"
+              <el-button
+                type="primary"
+                v-if="film.watch"
+                @click="toggleWatchFilm(film.id)"
                 >unWatch</el-button
               >
-              <el-button v-else @click="toggleWatchFilm(film.id)"
+              <el-button type="primary" v-else @click="toggleWatchFilm(film.id)"
                 >Watch</el-button
               >
-              <el-button @click="deleteFilms(film.id)">Delete</el-button>
+              <el-button type="danger" @click="deleteFilms(film.id)"
+                >Delete</el-button
+              >
             </div>
           </div>
         </div>
