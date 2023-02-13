@@ -6,7 +6,7 @@
     shadow="always"
     :body-class="{ padding: '0px' }"
   >
-    <div style="padding: 10px" class="body">
+    <div class="body">
       <img
         :src="
           item.poster_path
@@ -15,22 +15,16 @@
         "
         alt=""
       />
-      <div class="title">
+      <div class="item_body">
         <div style="flex: max-content">
           {{ item.title }}
           <br />
           {{ item.overview }}
         </div>
-        <div
-          style="
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-          "
-        >
+        <div class="item_footer">
           <div>Rating: {{ item.vote_average }}</div>
           <div>Release date: {{ item.release_date }}</div>
-          <el-button>Watch</el-button>
+          <el-button @click="addToUserMovies(item)">Add</el-button>
         </div>
       </div>
     </div>
@@ -45,10 +39,11 @@ export default {
   name: "MarketItems",
   setup() {
     const FilmStore = useFilmsStore();
-    const { movie_data } = toRefs(FilmStore);
+    const { movie_data, addToUserMovies } = toRefs(FilmStore);
 
     return {
       movie_data,
+      addToUserMovies,
     };
   },
 };
@@ -58,15 +53,22 @@ export default {
 .body {
   display: flex;
   gap: 20px;
+  padding: 10px;
 }
 
 .card {
   margin-bottom: 20px;
 }
 
-.title {
+.item_body {
   display: flex;
   flex-direction: column;
+}
+
+.item_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 img {

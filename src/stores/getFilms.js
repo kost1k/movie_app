@@ -1,7 +1,8 @@
 import { defineStore } from "pinia";
+import { useFavoriteFilms } from "@/stores/getFavoriteFilms";
 const api_key = "ee52fd28bd25dda214a5330a1eea558f";
 
-export const useFilmsStore = defineStore("counter", {
+export const useFilmsStore = defineStore("searchFilms", {
   state() {
     return {
       movie_data: {},
@@ -13,6 +14,10 @@ export const useFilmsStore = defineStore("counter", {
       const res = await fetch(`${api_url}`);
       const data = await res.json();
       this.movie_data = data.results;
+    },
+    addToUserMovies(obj) {
+      const movieStore = useFavoriteFilms();
+      movieStore.favoriteMovie.push({ ...obj, watch: false });
     },
   },
 });

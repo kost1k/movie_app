@@ -3,41 +3,21 @@ import { defineStore } from "pinia";
 export const useFavoriteFilms = defineStore("favoriteFilms", {
   state() {
     return {
-      favoriteMovie: [
-        {
-          name: "Batman",
-          title: "this batman",
-          id: 1,
-        },
-        {
-          name: "Spider-man",
-          title: "this spider-man",
-          id: 2,
-        },
-        {
-          name: "Thor",
-          title: "this thor",
-          id: 3,
-        },
-      ],
+      favoriteMovie: [],
     };
+  },
+  getters: {
+    watchedMovies() {
+      return this.favoriteMovie.filter((arr) => arr.watch);
+    },
   },
   actions: {
     deleteFilms(id) {
       this.favoriteMovie = this.favoriteMovie.filter((arr) => arr.id !== id);
     },
-    watchFilm(id) {
-      this.favoriteMovie = this.favoriteMovie.map((arr) => {
-        if (arr.id === id) {
-          if (arr.watch === true) {
-            return { ...arr, watch: false };
-          } else {
-            return { ...arr, watch: true };
-          }
-        } else {
-          return arr;
-        }
-      });
+    toggleWatchFilm(id) {
+      const idx = this.favoriteMovie.findIndex((el) => el.id === id);
+      this.favoriteMovie[idx].watch = !this.favoriteMovie[idx].watch;
     },
   },
 });
