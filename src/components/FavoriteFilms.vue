@@ -12,7 +12,7 @@
 <script>
 import { useFavoriteFilms } from "@/stores/getFavoriteFilms";
 import { toRefs } from "vue";
-import CardFilms from "@/components/FavoriteFilms/cardFilms.vue";
+import CardFilms from "@/components/FavoriteFilms/CardFilms.vue";
 
 export default {
   name: "FavoriteFilms",

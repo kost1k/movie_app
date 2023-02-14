@@ -7,13 +7,13 @@
 </template>
 
 <script>
-import { useFilmsStore } from "@/stores/getFilms";
+import { useFilmsMarket } from "@/stores/getFilmsMarket";
 import { toRefs } from "vue";
 
 export default {
   name: "InputSearch",
   setup() {
-    const filmsStore = useFilmsStore();
+    const filmsStore = useFilmsMarket();
     const { movie_data, getFilm } = toRefs(filmsStore);
 
     return {

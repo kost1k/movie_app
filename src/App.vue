@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-  <div class="nav">
+  <nav>
     <el-menu :default-active="selected" mode="horizontal" :router="true">
       <el-menu-item index="home" :route="{ name: 'home' }">
         Favorite Films
@@ -23,7 +23,7 @@ export default {
         Search
       </el-menu-item>
     </el-menu>
-  </div>
+  </nav>
   <div class="container">
     <RouterView />
   </div>

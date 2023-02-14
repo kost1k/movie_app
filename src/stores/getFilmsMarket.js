@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { useFavoriteFilms } from "@/stores/getFavoriteFilms";
 const api_key = "ee52fd28bd25dda214a5330a1eea558f";
 
-export const useFilmsStore = defineStore("searchFilms", {
+export const useFilmsMarket = defineStore("searchFilms", {
   state() {
     return {
       movie_data: {},

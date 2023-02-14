@@ -43,7 +43,7 @@ import { toRefs } from "vue";
 
 export default {
   name: "cardFilms",
-  props: ["propsItem"],
+  props: { propsItem: Array },
   setup() {
     const FilmStore = useFavoriteFilms();
     const { toggleWatchFilm, deleteFilms } = toRefs(FilmStore);

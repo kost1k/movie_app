@@ -33,13 +33,13 @@
 </template>
 
 <script>
-import { useFilmsStore } from "@/stores/getFilms";
+import { useFilmsMarket } from "@/stores/getFilmsMarket";
 import { toRefs } from "vue";
 
 export default {
   name: "MarketItems",
   setup() {
-    const FilmStore = useFilmsStore();
+    const FilmStore = useFilmsMarket();
     const { movie_data, addToUserMovies } = toRefs(FilmStore);
 
     return {
