@@ -8,6 +8,7 @@
   >
     <div class="body">
       <img
+        class="body_img"
         :src="
           item.poster_path
             ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
@@ -72,7 +73,7 @@ export default {
   align-items: center;
 }
 
-img {
+.body_img {
   height: 300px;
   width: 200px;
 }

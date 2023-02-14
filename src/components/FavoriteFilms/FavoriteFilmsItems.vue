@@ -4,6 +4,7 @@
       <el-card>
         <div class="cards">
           <img
+            class="card_img"
             :src="
               film.poster_path
                 ? `https://image.tmdb.org/t/p/w500${film.poster_path}`
@@ -75,7 +76,7 @@ export default {
   justify-content: end;
 }
 
-img {
+.card_img {
   height: 150px;
   width: 100px;
 }
