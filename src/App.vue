@@ -16,10 +16,10 @@ export default {
 <template>
   <nav>
     <el-menu :default-active="selected" mode="horizontal" :router="true">
-      <el-menu-item index="home" :route="{ name: 'home' }">
+      <el-menu-item index="favorite" :route="{ name: 'favorite' }">
         Favorite Films
       </el-menu-item>
-      <el-menu-item index="about" :route="{ name: 'about' }">
+      <el-menu-item index="market" :route="{ name: 'market' }">
         Search
       </el-menu-item>
     </el-menu>

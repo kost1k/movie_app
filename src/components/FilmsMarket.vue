@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import MarketItems from "@/components/FimsMarket/MarketItems.vue";
-import InputSearch from "@/components/FimsMarket/InputSearch.vue";
+import MarketItems from "@/components/FimsMarket/FilmsMarketItems.vue";
+import InputSearch from "@/components/FimsMarket/FilmsMarketSearch.vue";
 
 export default {
   components: { InputSearch, MarketItems },

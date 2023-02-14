@@ -1,19 +1,19 @@
 import { createRouter, createWebHistory } from "vue-router";
-import AboutView from "@/views/AboutView.vue";
-import HomeView from "@/views/HomeView.vue";
+import FilmsMarketView from "@/views/FilmsMarketView.vue";
+import FavoriteFilmsView from "@/views/FavoriteFilmsView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
-      name: "home",
-      component: HomeView,
+      name: "favorite",
+      component: FavoriteFilmsView,
     },
     {
       path: "/about",
-      name: "about",
-      component: AboutView,
+      name: "market",
+      component: FilmsMarketView,
     },
   ],
 });
