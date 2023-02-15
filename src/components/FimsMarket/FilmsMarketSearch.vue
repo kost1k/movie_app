@@ -1,9 +1,11 @@
 <template>
-  <el-input
-    v-model="searchInput"
-    placeholder="Please input"
-    @keyup.enter="getFilm(searchInput)"
-  ></el-input>
+  <div class="search_input">
+    <el-input
+      v-model="searchInput"
+      placeholder="Please input"
+      @keyup.enter="getFilm(searchInput)"
+    ></el-input>
+  </div>
 </template>
 
 <script>
@@ -34,4 +36,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.search_input {
+  width: 600px;
+  margin: 0 auto;
+}
+</style>
