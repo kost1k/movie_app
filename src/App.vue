@@ -26,7 +26,9 @@
       </el-menu>
     </el-header>
     <el-main>
-      <RouterView />
+      <div class="container">
+        <RouterView />
+      </div>
     </el-main>
   </el-container>
 </template>
@@ -59,6 +61,10 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .nav_bar {
   justify-content: center;
 }
